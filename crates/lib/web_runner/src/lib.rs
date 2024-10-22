@@ -1,7 +1,5 @@
-pub mod axum_app_error;
 pub mod axum_server;
 
-pub use axum_app_error::AppError;
 use listenfd::ListenFd;
 use tokio::net::TcpListener;
 

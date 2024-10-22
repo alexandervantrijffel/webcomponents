@@ -11,8 +11,7 @@ http = "1.1.0"
 listenfd = "1.0.1"
 tokio = { workspace = true }
 tower = "0.5.1"
-tower-http = {version = "0", features = ["cors","normalize-path","trace"]}
-tracing = { workspace = true }
+tower-http = {version = "0", features = ["cors","normalize-path"]}
 url = "2.5.2"
 
 [lib]

@@ -1,9 +1,9 @@
 use anyhow::{Context, Result};
 use askama::Template;
-use axum::response::IntoResponse;
+use axum::http::StatusCode;
+use axum::response::{Html, IntoResponse};
 use axum::routing::get;
 use axum::Router;
-use web_runner::axum_app_error::*;
 use web_runner::axum_server::add_middleware_layers;
 use web_runner::start_listenfd;
 use webcomponents::CalendarTemplate;
@@ -33,6 +33,6 @@ impl AppState {
     }
 }
 
-pub async fn view_calendar() -> Result<impl IntoResponse, AppError> {
-    Ok(CalendarTemplate {}.render()?)
+pub async fn view_calendar() -> impl IntoResponse {
+    (StatusCode::OK, Html(CalendarTemplate {}.render().unwrap()))
 }
