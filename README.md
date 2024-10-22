@@ -19,14 +19,13 @@ When developing web components, quick feedback on changes to the components is e
 
 - Hosting of the webcomponents with an Axum webserver
 - Providing optimal incremental build times (around 0.63s on a MacBook Pro M3 MAX)
-- Live reload of the page with live.js
+- Live reload of the page with systemfd and live.js
 - Generation and hosting of Tailwind CSS styles
 
-Install [Just](https://github.com/casey/just) and run the following commands:
+Install [Just](https://github.com/casey/just) and [systemfd](https://github.com/mitsuhiko/systemfd) and run the following command:
 
 ```shell
-just pnpm-dev
-just serve-watch
+just pnpm-dev & serve-watch
 ```
 
 The web app is accessible at `http://localhost:8181`.
