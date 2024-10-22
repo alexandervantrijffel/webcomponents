@@ -1,0 +1,12 @@
+[package]
+name = "webcomponents"
+version = "0.1.0"
+edition = "2021"
+include = ["assets/**"]
+
+[dependencies]
+anyhow = { workspace = true }
+askama = { workspace = true }
+
+[features]
+assets = []
