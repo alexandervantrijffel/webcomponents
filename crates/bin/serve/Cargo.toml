@@ -4,3 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+anyhow = { workspace = true }
+askama = { workspace = true }
+axum = { workspace = true }
+web_runner = { path = "../../lib/web_runner" }
+webcomponents = { path = "../../lib/webcomponents" }
+tokio = { workspace = true }

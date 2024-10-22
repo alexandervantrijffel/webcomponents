@@ -4,6 +4,16 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+anyhow = "1.0.90"
+askama = { workspace = true }
+axum = { workspace = true }
+http = "1.1.0"
+listenfd = "1.0.1"
+tokio = { workspace = true }
+tower = "0.5.1"
+tower-http = {version = "0", features = ["cors","normalize-path","trace"]}
+tracing = { workspace = true }
+url = "2.5.2"
 
 [lib]
 doctest = false
