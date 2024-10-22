@@ -2,11 +2,11 @@
 name = "webcomponents"
 version = "0.1.0"
 edition = "2021"
-include = ["assets/**"]
 
 [dependencies]
 anyhow = { workspace = true }
 askama = { workspace = true }
+chrono = { version="0.4", default-features=false, features=["alloc"] }
 
 [features]
 assets = []

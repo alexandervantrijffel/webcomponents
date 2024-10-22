@@ -55,7 +55,7 @@ async fn view_layout() -> impl IntoResponse {
         Html(
             LayoutTemplate {
                 build_id: crate::BUILD_ID,
-                component: CalendarTemplate {},
+                component: CalendarTemplate::try_new(10, 2024).unwrap(),
             }
             .render()
             .unwrap(),
