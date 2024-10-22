@@ -7,6 +7,7 @@ edition = "2021"
 anyhow = { workspace = true }
 askama = { workspace = true }
 axum = { workspace = true }
+chrono = { workspace = true }
 web_runner = { path = "../../lib/web_runner" }
 webcomponents = { path = "../../lib/webcomponents" }
 tokio = { workspace = true }

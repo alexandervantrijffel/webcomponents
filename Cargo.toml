@@ -9,5 +9,6 @@ debug = false       # this has been turned off to improve compilation performanc
 anyhow = { version="1.0" }
 askama = "0.12"
 axum = {version="0.7", features=[]}
+chrono = { version="0.4", default-features=false, features=["alloc", "clock"] }
 tokio = { version = "1.40", default-features= false, features = ["net", "rt-multi-thread" ] }
 tower = { version = "0.5"}

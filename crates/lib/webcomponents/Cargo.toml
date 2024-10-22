@@ -6,7 +6,7 @@ edition = "2021"
 [dependencies]
 anyhow = { workspace = true }
 askama = { workspace = true }
-chrono = { version="0.4", default-features=false, features=["alloc"] }
+chrono = { workspace = true }
 
 [features]
 assets = []

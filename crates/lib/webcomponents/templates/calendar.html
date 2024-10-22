@@ -17,10 +17,6 @@
 </button>
 {% endmacro %}
 
-{# for generating tailwind classes #}
-<div
-  class="bg-boxdark bg-meta-4 !rounded-none text-white text-gray-400 rounded-tl-none rounded-b-none rounded-tl-lg rounded-tr-none rounded-tr-lg foxus:z-10">
-</div>
 <div class="hidden w-1/2 max-w-md flex-none border-l border-strokedark px-8 py-10 md:block">
   <div class="flex items-center text-center text-white">
     <button type="button" class="-m-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400">
@@ -132,7 +128,8 @@
 
 {% macro day2(day) %}
 <button type="button" class="py-1.5 hover:bg-meta-4 {{ day.corner_classes }} {{ day.color_classes }}">
-  <time datetime="" class="mx-auto flex h-7 w-7 items-center justify-center rounded-full">{{ day.date.day() }}</time>
+  <time datetime="" class="mx-auto flex h-7 w-7 items-center justify-center rounded-full {{ day.inner_classes }}">{{
+    day.date.day() }}</time>
 </button>
 {% endmacro %}
 
@@ -165,3 +162,8 @@
     {% endfor %}
   </div>
 </div>
+{# for generating tailwind classes, all classes that are added dynamically by Rust/Askama code, must also be present in
+a plain html element #}
+<span
+  class="opacity-0 bg-boxdark bg-meta-4 !rounded-none text-white text-gray-400 rounded-tl-none rounded-b-none rounded-tl-lg rounded-tr-none rounded-tr-lg foxus:z-10 bg-red bg-meta-8 bg-meta-7 bg-meta-3">
+</span>
