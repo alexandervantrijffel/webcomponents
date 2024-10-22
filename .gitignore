@@ -1,1 +1,5 @@
 /target
+
+generated_at_build.rs
+
+node_modules

@@ -10,3 +10,4 @@ anyhow = { version="1.0" }
 askama = "0.12"
 axum = {version="0.7", features=[]}
 tokio = { version = "1.40", default-features= false, features = ["net", "rt-multi-thread" ] }
+tower = { version = "0.5"}

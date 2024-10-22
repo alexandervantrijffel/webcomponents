@@ -1,0 +1,12 @@
+{
+  "name": "webcomponents",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx tailwindcss -i ./templates/base.css -o ./assets/css/base.css --watch",
+    "prod": "npx tailwindcss -i ./templates/base.css -o ./assets/css/base.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.8"
+  }
+}

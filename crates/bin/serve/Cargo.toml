@@ -10,3 +10,10 @@ axum = { workspace = true }
 web_runner = { path = "../../lib/web_runner" }
 webcomponents = { path = "../../lib/webcomponents" }
 tokio = { workspace = true }
+
+[build-dependencies]
+nanoid = "0.4"
+
+[features]
+default = ["webcomponents/assets"]
+
