@@ -5,6 +5,7 @@ use axum::response::{Html, IntoResponse};
 use axum::routing::get;
 use axum::Router;
 use web_runner::axum_server::add_middleware_layers;
+use web_runner::layout::LayoutTemplate;
 use web_runner::start_listenfd;
 use webcomponents::CalendarTemplate;
 
@@ -14,8 +15,7 @@ async fn main() -> anyhow::Result<()> {
 
     let router = add_middleware_layers(
         Router::new()
-            .route("/", get(view_calendar))
-            // .route("/calendar", get(view_calendar::view_calendar))
+            .route("/", get(view_layout))
             .with_state(app_state),
     );
 
@@ -33,6 +33,16 @@ impl AppState {
     }
 }
 
-pub async fn view_calendar() -> impl IntoResponse {
-    (StatusCode::OK, Html(CalendarTemplate {}.render().unwrap()))
+async fn view_layout() -> impl IntoResponse {
+    (
+        StatusCode::OK,
+        Html(
+            LayoutTemplate {
+                build_id: "TOOOODOOOOO",
+                component: CalendarTemplate {},
+            }
+            .render()
+            .unwrap(),
+        ),
+    )
 }
