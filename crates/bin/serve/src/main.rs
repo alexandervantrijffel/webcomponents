@@ -57,6 +57,7 @@ async fn view_layout() -> impl IntoResponse {
         Html(
             LayoutTemplate {
                 build_id: crate::BUILD_ID,
+                #[allow(deprecated)]
                 component: CalendarTemplate::try_new(
                     10,
                     2024,
