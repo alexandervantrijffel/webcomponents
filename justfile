@@ -14,7 +14,7 @@ serve-watch *ARGS:
 #
 # install the nightly toolchain with
 # `rustup toolchain install nightly`
-
+#
 # reduce build time by using the Cranelift compiler backend instead of LLVM
 serve-watch-cranelift *ARGS:
   rustup override set nightly
@@ -23,3 +23,7 @@ serve-watch-cranelift *ARGS:
 # watch source files and run all tests
 webcomponents-test *ARGS:
   cargo watch -c --ignore '**/generated_at_build.rs' -w . -x "nextest run --all-features --verbose -p webcomponents {{ARGS}}"
+
+# watch source files and run all tests
+webcomponents-test-cranelift *ARGS:
+  cargo watch -c --ignore '**/generated_at_build.rs' -w . -x "+nightly nextest run -Zcodegen-backend --all-features --verbose -p webcomponents {{ARGS}}"

@@ -3,7 +3,10 @@ resolver = "2"
 members = ["crates/bin/serve", "crates/lib/web_runner","crates/lib/webcomponents"]
 
 [profile.dev]
-debug = false       # this has been turned off to improve compilation performance. Re-enable this for debug symbols, for instance for stack traces, disabled for shorting build duration, increases build duration when enabled
+opt-level = 1
+strip = true
+split-debuginfo = "unpacked" # improve compilation performance by using unpacked debug symbols
+debug = false # this has been turned off to improve compilation performance. Re-enable this for debug symbols, for instance for stack traces, disabled for shorting build duration, increases build duration when enabled
 
 [workspace.dependencies]
 anyhow = { version="1.0" }
