@@ -4,12 +4,10 @@ use axum::http::{header, HeaderMap, StatusCode};
 use axum::response::{Html, IntoResponse};
 use axum::routing::get;
 use axum::Router;
-use chrono::NaiveDate;
 use web_runner::axum_server::add_middleware_layers;
 use web_runner::layout::LayoutTemplate;
 use web_runner::start_listenfd;
-use webcomponents::calendar::{DayConfig, DayMarker};
-use webcomponents::{get_base_css, CalendarTemplate};
+use webcomponents::{demo, get_base_css};
 
 include!("generated_at_build.rs");
 
@@ -58,25 +56,7 @@ async fn view_layout() -> impl IntoResponse {
             LayoutTemplate {
                 build_id: crate::BUILD_ID,
                 #[allow(deprecated)]
-                component: CalendarTemplate::try_new(
-                    10,
-                    2024,
-                    vec![
-                        DayConfig {
-                            date: NaiveDate::from_ymd(2024, 10, 7),
-                            marker: Some(DayMarker::Green),
-                        },
-                        DayConfig {
-                            date: NaiveDate::from_ymd(2024, 10, 8),
-                            marker: None,
-                        },
-                        DayConfig {
-                            date: NaiveDate::from_ymd(2024, 10, 9),
-                            marker: Some(DayMarker::Orange),
-                        },
-                    ],
-                )
-                .unwrap(),
+                component: demo::demo(),
             }
             .render()
             .unwrap(),

@@ -18,6 +18,7 @@ serve-watch *ARGS:
 # reduce build time by using the Cranelift compiler backend instead of LLVM
 serve-watch-cranelift *ARGS:
   rustup override set nightly
+  export RUSTFLAGS="${RUSTFLAGS} -Zthreads=8"
   CARGO_PROFILE_DEV_CODEGEN_BACKEND=cranelift systemfd --no-pid -s http::0.0.0.0:8181 --  cargo watch -q -c --ignore '**/generated_at_build.rs' -w . -x "+nightly run -Zcodegen-backend --all-features -p serve {{ARGS}}"
 
 # watch source files and run all tests

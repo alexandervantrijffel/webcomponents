@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta charset="utf-8">
-  <title>Dev</title>
-  <link rel="stylesheet" href="/assets/css/base.css?v={{ build_id }}">
-  <style>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8">
+        <title>Training Device usage</title>
+        <link rel="stylesheet" href="/assets/css/base.css?v={{ build_id }}">
+        <style>
     .htmx-indicator {
       opacity: 0;
     }
@@ -15,19 +14,19 @@
     .htmx-request .htmx-indicator {
       opacity: 1;
     }
-  </style>
-  <script src="https://unpkg.com/htmx.org@2.0.0/dist/htmx.min.js"></script>
-  <!-- todo replace with _hyperscript -->
-  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.14.1/dist/cdn.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
-  <script type="text/javascript" src="http://livejs.com/live.js#html"></script>
-  <script>
+        </style>
+        <script src="https://unpkg.com/htmx.org@2.0.0/dist/htmx.min.js"></script>
+        <!-- todo replace with _hyperscript -->
+        <script defer
+                src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.14.1/dist/cdn.min.js"></script>
+        <script defer
+                src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+        <script type="text/javascript" src="http://livejs.com/live.js#html"></script>
+        <script>
     // htmx.logger = function (elt, event, data) {
        // console.log(event, elt, data);
     // }
-  </script>
-</head>
-
-<body>{{ component|safe }}</body>
-
+        </script>
+    </head>
+    <body>{{ component|safe }}</body>
 </html>

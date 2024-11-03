@@ -1,4 +1,5 @@
 pub mod calendar;
+pub mod demo;
 
 pub use calendar::CalendarTemplate;
 
